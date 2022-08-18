@@ -82,6 +82,11 @@ jobs:
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
       run: terraform fmt -check
+      
+    - name: Get profile credentials from ~/.aws/credentials
+      run: |
+            aws configure get aws_access_key_id ${{ secrets.YOUR_ACCESS_KEY }} --profile bootcamp
+            aws configure get aws_secret_access_key ${{ secrets.YOUR_SECRET_ACCESS_KEY }} --profile bootcamp
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
