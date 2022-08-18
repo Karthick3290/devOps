@@ -83,11 +83,11 @@ jobs:
     - name: Terraform Format
       run: terraform fmt -check
       
-    - name: Get profile credentials from ~/.aws/credentials
+    - name: Set profile credentials to ~/.aws/credentials
       run: |
-            aws configure get aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID}} --profile bootcamp
-            aws configure get aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY}} --profile bootcamp
-            aws configure get aws_session_token ${{ secrets.AWS_SESSION_TOKEN}} --profile bootcamp
+            aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID}} --profile bootcampaws
+            aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY}} --profile bootcampaws
+            aws configure set aws_session_token ${{ secrets.AWS_SESSION_TOKEN}} --profile bootcampaws
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
