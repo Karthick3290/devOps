@@ -1,4 +1,5 @@
 provider "aws" {
   region                  = "ap-south-1"
-  profile                 = "bootcampaws"
+  shared_credentials_file = "~/.aws/credentials"
+  profile                 = "bootcamp"
 }
