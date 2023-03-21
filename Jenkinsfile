@@ -3,7 +3,7 @@ pipeline{
   parameters{
 //     string(name:'VERSION',defaultValue:'',description:'')
     choice(name: 'VERSION', choices:['1.0.1','1.0.2','1.0.3'], description:'')
-    booleanParam(name:'executeTests',defaultValue:false,description:'')
+    booleanParam(name:'executeTests',defaultValue:true,description:'')
   }
 //   tools {
 //     maven Maven
