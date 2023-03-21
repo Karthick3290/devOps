@@ -59,6 +59,7 @@ pipeline{
 //         echo 'Deploying the application'
 //         echo "The deployed version is ${params.VERSION}"
       }
+    }
       stage("frontend build"){
         steps{
           echo 'Executing node script'
@@ -85,4 +86,3 @@ pipeline{
 //     }
 //   }
 }
-    
