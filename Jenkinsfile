@@ -2,6 +2,9 @@ def gv
 
 pipeline{
   agent any
+  tools {
+    gradle 'Gradle'
+  }
   parameters{
 //     string(name:'VERSION',defaultValue:'',description:'')
     choice(name: 'VERSION', choices:['1.0.1','1.0.2','1.0.3'], description:'')
@@ -71,9 +74,9 @@ pipeline{
        stage("backend build"){
         steps{
           echo 'Executing gradle'
-          withGradle(){
+//           withGradle(){
             sh ' ./gradlew -v'
-        }
+//         }
       }
     }
   }
