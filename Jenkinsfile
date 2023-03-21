@@ -3,7 +3,8 @@ def gv
 pipeline{
   agent any
   tools {
-    gradle 'Gradle'
+//     gradle 'Gradle'
+    maven 'Maven-3.9.1'
   }
   parameters{
 //     string(name:'VERSION',defaultValue:'',description:'')
@@ -73,9 +74,11 @@ pipeline{
     }
        stage("backend build"){
         steps{
-          echo 'Executing gradle'
+//           echo 'Executing gradle'
+            echo 'Executing maven'
 //           withGradle(){
-            sh ' ./gradlew -v'
+//             sh ' ./gradlew -v'
+            sh 'mvn -v'
 //         }
       }
     }
