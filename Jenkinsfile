@@ -43,13 +43,13 @@ pipeline{
       }
     }
   }
-  post{
-    always{
-      //irrespective of the status of the stages this would be happening
-    }
-    success{ //failure
-      //when there is a change in build status or status in general
-    }
-  }
+//   post{
+//     always{
+//       //irrespective of the status of the stages this would be happening
+//     }
+//     success{ //failure
+//       //when there is a change in build status or status in general
+//     }
+//   }
 }
     
